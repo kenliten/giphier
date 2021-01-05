@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="Giphier">
+<html lang="en" data-ng-app="Giphier">
   <head>
     <title>Giphier</title>
 
@@ -9,8 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
+
+    <img src="">
+
+    <script>
+      fetch('https://api.giphy.com/v1/gifs/random?api_key=uQnVrA6sL3AuyoxPyfIyKD67QKEP4xsc')
+        .then(function(res) {
+          return res.json();
+        }).then(function(json) {
+          document.images[0].src = json.data.image_url;
+        }).catch(function() {
+          alert(':(');
+        })
+    </script>
     
-    <search-form></search-form>
+    <!-- <search-form></search-form>
 
     <script src="lib/angular.js"></script>
     <script src="./app/components/search-form/search-form.module.js"></script>
@@ -19,7 +32,7 @@
     <script src="./app/components/results/results.module.js"></script>
     <script src="./app/components/results/results.controller.js"></script>
     <script src="./app/components/results/results.component.js"></script>
-    <script src="app.js"></script>
+    <script src="app.js"></script> -->
 
   </body>
 </html>
